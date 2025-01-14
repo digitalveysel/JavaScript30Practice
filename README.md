@@ -4,3 +4,5 @@
 A 30-day Vanilla JavaScript coding challenge by Wes Bos.
 
 [JavaScript30](https://javascript30.com/ "JavaScript30") is a free course created by [Wes Bos](https://github.com/wesbos "Wes Bos"), where you can improve your Vanilla JavaScript skills by making small and fun projects.
+
+I repeat and improve the course to keep my knowledge of Vanilla JavaScript up to date.
