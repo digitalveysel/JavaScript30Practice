@@ -5,6 +5,7 @@ const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
 const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
+const fullButton = player.querySelector('.player__button--full');
 const ranges = player.querySelectorAll('.player__slider');
 
 /* Build Out Functions */
@@ -20,6 +21,15 @@ function updateButton() {
 
 function skip() {
     video.currentTime += parseFloat(this.dataset.skip);
+}
+
+function toggleFull() {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+        return;
+    }
+
+    player.requestFullscreen();
 }
 
 function handleRangeUpdate() {
@@ -46,6 +56,8 @@ video.addEventListener('timeupdate', handleProgress);
 toggle.addEventListener('click', togglePlay);
 
 skipButtons.forEach(button => button.addEventListener('click', skip));
+
+fullButton.addEventListener('click', toggleFull);
 
 ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
 ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
